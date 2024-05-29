@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "path": "web_client/"
+    },
+    {
+      "path": "client/"
+    },
+    {
+      "path": "server/"
+    }
+  ]
+}
