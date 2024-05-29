@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "cf-call-demo",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": [
+    "web_client",
+    "server"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "wrangler": "^3.50.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
