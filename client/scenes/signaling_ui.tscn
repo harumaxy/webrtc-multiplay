@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddf7nkufx6rcq"]
+
+[ext_resource type="Script" path="res://scripts/signaling_ui.gd" id="1_pnlnj"]
+
+[node name="RichTextLabel" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_pnlnj")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SDP" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Local" type="TextEdit" parent="HBox/SDP"]
+layout_mode = 2
+size_flags_vertical = 3
+editable = false
+
+[node name="CreateOffer" type="Button" parent="HBox/SDP"]
+layout_mode = 2
+text = "Create Offer"
+
+[node name="Remote" type="TextEdit" parent="HBox/SDP"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SetRemoteSDP" type="Button" parent="HBox/SDP"]
+layout_mode = 2
+text = "Set Offer/Answer"
+
+[node name="Chat" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Panel" type="Panel" parent="HBox/Chat"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBox/Chat/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/Chat"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBox/Chat/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBox/Chat/HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Send"
