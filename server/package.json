@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run build && wrangler dev",
+    "build": "wrangler deploy --dry-run --outdir dist src/index.ts",
+    "cf-typegen": "wrangler types",
+    "buf-gen": "bun run buf generate ../../packages/protobuf/protobuf.proto"
+  },
+  "dependencies": {
+    "@elysiajs/stream": "^1.0.2",
+    "@sinclair/typebox": "^0.32.31",
+    "elysia": "latest",
+    "type-fest": "^4.18.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240512.0",
+    "bun-types": "latest",
+    "wrangler": "^3.50.0"
+  },
+  "module": "src/index.js"
+}

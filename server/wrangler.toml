@@ -1,0 +1,14 @@
+name = "cf-call-demo-server"
+compatibility_date = "2024-05-02"
+main = "./dist/index.js"
+
+
+[vars]
+
+[[durable_objects.bindings]]
+class_name = "Room"
+name = "ROOM"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Room"]
