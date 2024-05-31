@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dispwplatauck"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_8mhgh"]
+[ext_resource type="Texture2D" uid="uid://c22881633soms" path="res://icon.svg" id="2_kugbc"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8mhgh")
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
+spawn_path = NodePath("../Players")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(556, 614)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+scale = Vector2(11.1094, 1)
+texture = ExtResource("2_kugbc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform"]
+scale = Vector2(11.1094, 1)
+polygon = PackedVector2Array(59, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)

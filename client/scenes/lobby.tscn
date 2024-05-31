@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://d11q7l5mtkj13"]
+
+[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_1b4dv"]
+[ext_resource type="Script" path="res://scripts/matching.gd" id="2_ix3nl"]
+[ext_resource type="Script" path="res://scripts/multiplay.gd" id="3_l7xwl"]
+
+[sub_resource type="FontFile" id="FontFile_0yjgg"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_glipu"]
+default_font = SubResource("FontFile_0yjgg")
+default_font_size = 36
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_glipu")
+script = ExtResource("1_1b4dv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -66.5
+offset_right = 204.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Your Id"
+
+[node name="PlayerId" type="LineEdit" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Room Id: "
+
+[node name="RoomId" type="LineEdit" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Your Name: "
+
+[node name="PlayerName" type="LineEdit" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+
+[node name="Join" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="Matching" type="Node" parent="."]
+script = ExtResource("2_ix3nl")
+
+[node name="Multiplay" type="Node" parent="Matching"]
+script = ExtResource("3_l7xwl")
